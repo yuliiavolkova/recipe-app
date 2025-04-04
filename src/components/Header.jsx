@@ -1,8 +1,10 @@
+import chefClaudeLogo from "/src/images/chef-claude-icon.png";
+
 export default function Header() {
   return (
     <header>
-      <img src="/src/images/globe.png" alt="globe icon" className="logo" />
-      <h1>React RECIPE project</h1>
+      <img src={chefClaudeLogo} />
+      <h1>Chef Claude</h1>
     </header>
   );
 }
