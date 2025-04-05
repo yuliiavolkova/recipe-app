@@ -27,6 +27,14 @@ header > h1 {
   font-weight: 400;
 }
 
+.add-ingredient-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 20px auto;
+}
+
 /*:root {
   font-family: system-ui, Helvetica, Arial, sans-serif;
   line-height: 1.5;
