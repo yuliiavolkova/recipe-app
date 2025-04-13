@@ -20,7 +20,13 @@ export default function App() {
   return (
     <main>
       <h1 className="title">Do I feel like going out tonight?</h1>
-      <button onClick={changeMind} className="value">
+      <button
+        onClick={changeMind}
+        className="value"
+        aria-label={`Current answer is ${
+          isGoingOut ? "yes" : "no"
+        }. Click to change it.`}
+      >
         {isGoingOut ? "Yes" : "No"}
       </button>
     </main>
