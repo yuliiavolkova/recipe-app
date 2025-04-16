@@ -1,3 +1,4 @@
+/* Chef Claude
 import Header from "./components/Header";
 import Main from "./components/Main";
 
@@ -8,7 +9,50 @@ export default function App() {
       <Main />
     </div>
   );
+}*/
+
+// Complex state - objects
+import React from "react"; // Import React
+import avatar from "/src/images/user.png";
+import starFilled from "/src/images/star-filled.png";
+import starEmpty from "/src/images/star-empty.png";
+
+export default function App() {
+  const [contact, setContact] = React.useState({
+    firstName: "John",
+    lastName: "Doe",
+    phone: "+1 (555) 555-5555",
+    email: "itsmyrealname@example.com",
+    isFavorite: false,
+  });
+  function toggleFavorite() {
+    console.log("Toggle favorite");
+  }
+  return (
+    <main>
+      <article className="card">
+        <img
+          src={avatar}
+          className="avatar"
+          alt="User profile picture of John Doe"
+        />
+        <div className="info">
+          <button
+            onClick={toggleFavorite}
+            aria-pressed={false}
+            className="favorite-button"
+          >
+            <img src={starEmpty} alt="empty star icon" className="favorite" />
+          </button>
+          <h2 className="name">John Doe</h2>
+          <p className="contact">+1 (212) 555-1212</p>
+          <p className="contact">itsmyrealname@example.com</p>
+        </div>
+      </article>
+    </main>
+  );
 }
+
 /*
 import React from "react"; // Import React
 export default function App() {
