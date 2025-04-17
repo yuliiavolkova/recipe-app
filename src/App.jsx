@@ -11,7 +11,35 @@ export default function App() {
   );
 }*/
 
+// forms in React
+import React from "react";
+import ReactDOM from "react-dom/client";
+
+export default function App() {
+  return (
+    <section>
+      <h1> Signup form</h1>
+      <form>
+        <label htmlFor="email">Email:</label>
+        <input
+          id="email"
+          type="email"
+          name="email"
+          placeholder="joe.schmoe.com"
+        />
+        <br />
+        <label htmlFor="password">Password:</label>
+        <input id="password" type="password" name="password" />
+        <br />
+        <button>Submit</button>
+      </form>
+    </section>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+
 // Complex state - objects
+/*
 import React from "react"; // Import React
 import avatar from "/src/images/user.png";
 import starFilled from "/src/images/star-filled.png";
@@ -37,7 +65,8 @@ export default function App() {
     email: "itsmyrealname@example.com",
     isFavorite: true,
         */
-        ...prevContact, // Spread operator to copy the previous state
+
+/*...prevContact, // Spread operator to copy the previous state
         isFavorite: !prevContact.isFavorite,
       };
     });
@@ -75,7 +104,7 @@ export default function App() {
       </article>
     </main>
   );
-}
+}*/
 
 /*
 import React from "react"; // Import React
