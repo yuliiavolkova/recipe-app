@@ -28,7 +28,19 @@ export default function App() {
 
   let starIcon = contact.isFavorite ? starFilled : starEmpty;
   function toggleFavorite() {
-    console.log("Toggle favorite");
+    setContact((prevContact) => {
+      return {
+        /* 
+        firstName: "John",
+    lastName: "Doe",
+    phone: "+1 (555) 555-5555",
+    email: "itsmyrealname@example.com",
+    isFavorite: true,
+        */
+        ...prevContact, // Spread operator to copy the previous state
+        isFavorite: !prevContact.isFavorite,
+      };
+    });
   }
 
   return (
