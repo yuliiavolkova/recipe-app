@@ -6,21 +6,14 @@ export default function Main() {
     <li key={ingredient}>{ingredient}</li>
   ));
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    //console.log("Ingredient added");
-    const formData = new FormData(event.currentTarget);
+  function addIngredient(formData) {
     const newIngredient = formData.get("ingredient");
-
     setIngredients((prevIngredients) => [...prevIngredients, newIngredient]);
-    console.log(newIngredient);
-    //ingredients.push(newIngredient); // Add the new ingredient to the ingredients array
-    console.log(ingredients);
   }
 
   return (
     <main>
-      <form onSubmit={handleSubmit} className="add-ingredient-form">
+      <form action={addIngredient} className="add-ingredient-form">
         <input
           type="text"
           placeholder="e.g. oregano"

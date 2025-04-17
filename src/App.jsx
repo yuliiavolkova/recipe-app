@@ -1,4 +1,4 @@
-/* Chef Claude
+//Chef Claude
 import Header from "./components/Header";
 import Main from "./components/Main";
 
@@ -9,16 +9,19 @@ export default function App() {
       <Main />
     </div>
   );
-}*/
+}
 
 // forms in React
+/*
 import React from "react";
 import ReactDOM from "react-dom/client";
 
 export default function App() {
   function signUp(formData) {
     const email = formData.get("email");
+    const password = formData.get("password");
     console.log(email);
+    console.log(password);
   }
 
   return (
@@ -42,7 +45,7 @@ export default function App() {
   );
 }
 ReactDOM.createRoot(document.getElementById("root")).render(<App />);
-
+*/
 // Complex state - objects
 /*
 import React from "react"; // Import React
