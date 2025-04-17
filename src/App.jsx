@@ -16,10 +16,15 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 export default function App() {
+  function signUp(formData) {
+    const email = formData.get("email");
+    console.log(email);
+  }
+
   return (
     <section>
       <h1> Signup form</h1>
-      <form>
+      <form action={signUp}>
         <label htmlFor="email">Email:</label>
         <input
           id="email"
