@@ -1,5 +1,5 @@
 //Chef Claude
-import Header from "./components/Header";
+/*import Header from "./components/Header";
 import Main from "./components/Main";
 
 export default function App() {
@@ -9,10 +9,10 @@ export default function App() {
       <Main />
     </div>
   );
-}
+}*/
 
 // forms in React
-/*
+
 import React from "react";
 import ReactDOM from "react-dom/client";
 
@@ -20,8 +20,11 @@ export default function App() {
   function signUp(formData) {
     const email = formData.get("email");
     const password = formData.get("password");
-    console.log(email);
-    console.log(password);
+    const employmentStatus = formData.get("employmentStatus");
+    //console.log(email);
+    //console.log(employmentStatus);
+    const dietaryRestrictions = formData.getAll("dietaryRestrictions");
+    console.log(dietaryRestrictions);
   }
 
   return (
@@ -31,21 +34,79 @@ export default function App() {
         <label htmlFor="email">Email:</label>
         <input
           id="email"
+          defaultValue="joe@schmoe.com"
           type="email"
           name="email"
           placeholder="joe.schmoe.com"
         />
         <br />
         <label htmlFor="password">Password:</label>
-        <input id="password" type="password" name="password" />
+        <input
+          id="password"
+          defaultValue="password123"
+          type="password"
+          name="password"
+        />
         <br />
+
+        <label htmlFor="description">Description</label>
+        <textarea
+          id="description"
+          name="description"
+          defaultValue="This is a description"
+        ></textarea>
+        <fieldset>
+          <legend>Employment Status</legend>
+          <label>
+            <input type="radio" name="employmentStatus" value="unemployed" />
+            Unemployed
+          </label>
+          <label>
+            <input type="radio" name="employmentStatus" value="part-time" />
+            Part-time
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="employmentStatus"
+              defaultChecked={true}
+              value="full-time"
+            />
+            Full-time
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Dietary restrictions</legend>
+          <label>
+            <input type="checkbox" name="dietaryRestrictions" value="kosher" />
+            Kosher
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="dietaryRestrictions"
+              value="vegetarian"
+            />
+            Vegetarian
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="dietaryRestrictions"
+              value="gluten-free"
+            />
+            Gluten-free
+          </label>
+        </fieldset>
+
         <button>Submit</button>
       </form>
     </section>
   );
 }
 ReactDOM.createRoot(document.getElementById("root")).render(<App />);
-*/
+
 // Complex state - objects
 /*
 import React from "react"; // Import React
