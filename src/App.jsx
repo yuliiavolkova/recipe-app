@@ -18,13 +18,22 @@ import ReactDOM from "react-dom/client";
 
 export default function App() {
   function signUp(formData) {
-    const email = formData.get("email");
-    const password = formData.get("password");
-    const employmentStatus = formData.get("employmentStatus");
-    //console.log(email);
-    //console.log(employmentStatus);
+    const data = Object.fromEntries(formData.entries());
+    //console.log(data);
+    // const email = formData.get("email");
+    // const password = formData.get("password");
+    // const employmentStatus = formData.get("employmentStatus");
+    // //console.log(email);
+    // //console.log(employmentStatus);
     const dietaryRestrictions = formData.getAll("dietaryRestrictions");
-    console.log(dietaryRestrictions);
+    //console.log(dietaryRestrictions);
+    const allData = {
+      ...data,
+      dietaryRestrictions,
+    };
+    console.log(allData);
+    // const favColor = formData.get("favColor");
+    // console.log(favColor);
   }
 
   return (
@@ -99,6 +108,17 @@ export default function App() {
             Gluten-free
           </label>
         </fieldset>
+
+        <label htmlFor="color">What is your favorite color?</label>
+        <select id="favColor" name="favColor" defaultValue="" required>
+          <option value="" disabled>
+            -- Select a color --
+          </option>
+          <option value="red">Red</option>
+          <option value="green">Green</option>
+          <option value="blue">Blue</option>
+          <option value="yellow">Yellow</option>
+        </select>
 
         <button>Submit</button>
       </form>
