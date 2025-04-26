@@ -1,5 +1,5 @@
 //Chef Claude
-/*import Header from "./components/Header";
+import Header from "./components/Header";
 import Main from "./components/Main";
 
 export default function App() {
@@ -9,10 +9,10 @@ export default function App() {
       <Main />
     </div>
   );
-}*/
+}
 
 // forms in React
-
+/*
 import React from "react";
 import ReactDOM from "react-dom/client";
 
@@ -247,4 +247,16 @@ export default function App() {
       <section aria-live="polite">{thingsElements}</section>
     </main>
   );
+}*/
+
+//Jokes
+/*
+import Joke from "./components/Joke";
+import jokesData from "./components/jokesData";
+
+export default function App() {
+  const jokeElements = jokesData.map((joke) => {
+    return <Joke key={joke.id} setup={joke.setup} punchline={joke.punchline} />;
+  });
+  return <div>{jokeElements}</div>;
 }*/
