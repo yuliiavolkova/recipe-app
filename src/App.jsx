@@ -1,5 +1,5 @@
 //Chef Claude
-import Header from "./components/Header";
+/*import Header from "./components/Header";
 import Main from "./components/Main";
 
 export default function App() {
@@ -8,6 +8,30 @@ export default function App() {
       <Header />
       <Main />
     </div>
+  );
+}*/
+
+//Sound pads challenge
+
+import React from "react";
+import padsData from "./components/pads.js";
+import Pad from "./components/Pad.jsx";
+
+export default function App(/*{ darkMode }*/) {
+  const [pads, setPads] = React.useState(padsData);
+
+  /*const styles = {
+    backgroundColor: darkMode ? "#222222" : "#cccccc",
+  };*/
+
+  const buttonElements = pads.map((pad) => (
+    <Pad key={pad.id} color={pad.color} on={pad.on} /> /*style={styles}*/
+  ));
+
+  return (
+    <main>
+      <div className="pad-container">{buttonElements}</div>
+    </main>
   );
 }
 
@@ -125,14 +149,14 @@ export default function App() {
     </section>
   );
 }
-ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);*/
 
 // Complex state - objects
 /*
+
 import React from "react"; // Import React
 import avatar from "/src/images/user.png";
-import starFilled from "/src/images/star-filled.png";
-import starEmpty from "/src/images/star-empty.png";
+import Star from "/src/components/Star.jsx";
 
 export default function App() {
   const [contact, setContact] = React.useState({
@@ -143,22 +167,19 @@ export default function App() {
     isFavorite: true,
   });
 
-  let starIcon = contact.isFavorite ? starFilled : starEmpty;
   function toggleFavorite() {
-    setContact((prevContact) => {
+    setContact((prevContact) => ({
+      /* Приклад заміна об'єкта
       return {
-        /* 
         firstName: "John",
-    lastName: "Doe",
-    phone: "+1 (555) 555-5555",
-    email: "itsmyrealname@example.com",
-    isFavorite: true,
-        */
+        lastName: "Doe",
+        phone: "+1 (555) 555-5555",
+        email: "itsmyrealname@example.com",
+        isFavorite: true,*/
 
-/*...prevContact, // Spread operator to copy the previous state
-        isFavorite: !prevContact.isFavorite,
-      };
-    });
+/* ...prevContact, // Spread operator to copy the previous state
+      isFavorite: !prevContact.isFavorite,
+    }));
   }
 
   return (
@@ -170,20 +191,7 @@ export default function App() {
           alt="User profile picture of John Doe"
         />
         <div className="info">
-          <button
-            onClick={toggleFavorite}
-            aria-pressed={contact.isFavorite}
-            aria-label={
-              contact.isFavorite ? "Remove from favorites" : "Add to favorites"
-            }
-            className="favorite-button"
-          >
-            <img
-              src={starIcon}
-              alt={contact.isFavorite ? "filled star icon" : "empty star icon"}
-              className="favorite"
-            />
-          </button>
+          <Star isFilled={contact.isFavorite} handleClick={toggleFavorite} />
           <h2 className="name">
             {contact.firstName} {contact.lastName}
           </h2>
