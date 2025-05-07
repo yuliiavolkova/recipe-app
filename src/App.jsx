@@ -20,12 +20,21 @@ import Pad from "./components/Pad.jsx";
 export default function App(/*{ darkMode }*/) {
   const [pads, setPads] = React.useState(padsData);
 
+  function toggle() {
+    console.log("clicked");
+  }
+
   /*const styles = {
     backgroundColor: darkMode ? "#222222" : "#cccccc",
   };*/
 
   const buttonElements = pads.map((pad) => (
-    <Pad key={pad.id} color={pad.color} on={pad.on} /> /*style={styles}*/
+    <Pad
+      toggle={toggle}
+      key={pad.id}
+      color={pad.color}
+      on={pad.on}
+    /> /*style={styles}*/
   ));
 
   return (
