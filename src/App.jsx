@@ -1,5 +1,5 @@
 //Chef Claude
-/*import Header from "./components/Header";
+import Header from "./components/Header";
 import Main from "./components/Main";
 
 export default function App() {
@@ -9,16 +9,16 @@ export default function App() {
       <Main />
     </div>
   );
-}*/
+} /*) {
 
 //Sound pads challenge
-
+/*
 import React from "react";
 import padsData from "./components/pads.js";
 import Pad from "./components/Pad.jsx";
 
-export default function App(/*{ darkMode }*/) {
-  const [pads, setPads] = React.useState(padsData);
+export default function App(/*{ darkMode } STAY*/
+/*const [pads, setPads] = React.useState(padsData);
 
   function toggle(id) {
     setPads((prevPads) =>
@@ -28,19 +28,19 @@ export default function App(/*{ darkMode }*/) {
     );
   }
 
-  /*const styles = {
+  /*const styles = { STAY
     backgroundColor: darkMode ? "#222222" : "#cccccc",
   };*/
 
-  const buttonElements = pads.map((pad) => (
+/*const buttonElements = pads.map((pad) => (
     <Pad
       toggle={toggle}
       id={pad.id}
       key={pad.id}
       color={pad.color}
       on={pad.on}
-    /> /*style={styles}*/
-  ));
+    /> /*style={styles} STAY*/
+/*));
 
   return (
     <main>
