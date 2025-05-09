@@ -21,7 +21,11 @@ export default function App(/*{ darkMode }*/) {
   const [pads, setPads] = React.useState(padsData);
 
   function toggle(id) {
-    console.log(id);
+    setPads((prevPads) =>
+      prevPads.map((item) => {
+        return item.id === id ? { ...item, on: !item.on } : item; // Spread operator to copy the previous state
+      })
+    );
   }
 
   /*const styles = {
