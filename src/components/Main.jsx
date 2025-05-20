@@ -10,7 +10,14 @@ export default function Main() {
     "tomato paste",
   ]);
 
-  const [recipeShown, setRecipeShown] = React.useState(false);
+  const [recipeShown, setRecipeShown] = React.useState();
+  const recipeSection = React.useRef(null);
+
+  React.useEffect(() => {
+    if (recipeShown !== "" && recipeSection.current !== null) {
+      recipeSection.current.scrollIntoView();
+    }
+  }, [recipeShown]);
 
   function toggleRecipeShown() {
     setRecipeShown((prevRecipeShown) => !prevRecipeShown);
@@ -35,6 +42,7 @@ export default function Main() {
 
       {ingredients.length > 0 && (
         <IngredientsList
+          ref={recipeSection}
           ingredients={ingredients}
           toggleRecipeShown={toggleRecipeShown}
         />
